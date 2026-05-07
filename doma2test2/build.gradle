@@ -54,14 +54,13 @@ eclipse {
             }
         }
     }
+}
 
-	classpath {
-        file {
-            whenMerged {
-                // 生成フォルダをソースフォルダとしてリストにねじ込む
-                def genSrc = new org.gradle.plugins.ide.eclipse.model.SourceFolder('build/generated/sources/annotationProcessor/java/main', null)
-                entries.add(genSrc)
-            }
+sourceSets {
+    main {
+        java {
+            // Gradleのソースセットとして正当に登録する
+            srcDirs += 'build/generated/sources/annotationProcessor/java/main'
         }
     }
 }

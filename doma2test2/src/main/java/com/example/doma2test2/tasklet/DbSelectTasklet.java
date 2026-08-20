@@ -31,7 +31,7 @@ public class DbSelectTasklet implements Tasklet {
         // 今回は学習用という事で抽出条件は固定値とする
         Date startDate = Date.valueOf("2025-06-27");
         Date endDate = Date.valueOf("2025-07-02");
-        String toriCd = "00000002";
+        String toriCd = "00000001";
         List<JyuOrg> listJyuOrg = jyuOrgDaoCustom.selectTestIF(toriCd, startDate, endDate);
         
         for (JyuOrg jyuOrg : listJyuOrg) {
